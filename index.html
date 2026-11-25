@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MSK Builds</title>
-<meta name="description" content="MSK OS: every product and game Seun Mosaku has put on the internet, in one place.">
+<meta name="description" content="MSK OS: every product, game and website Seun Mosaku has put on the internet, in one place.">
 <meta property="og:title" content="MSK Builds">
 <meta property="og:description" content="Every product and game Seun Mosaku has put on the internet.">
 <meta property="og:url" content="https://mskbuilds.app">
@@ -84,6 +84,8 @@ h1{font-family:"Unbounded",system-ui,sans-serif;font-weight:800;font-size:clamp(
 .app:active .icon{transform:scale(.94)}
 .badge{position:absolute;top:-5px;right:-5px;width:16px;height:16px;border-radius:50%;border:3px solid var(--deep)}
 .badge.live{background:#4BE38A}.badge.pilot{background:#FFD23F}.badge.building{background:#9FB4FF}.badge.paused{background:#8A93C9}
+.grp{grid-column:1/-1;font:600 15px/1.2 "Geist",system-ui,sans-serif;color:var(--lilac);margin-bottom:-8px}
+.grp:not(:first-child){margin-top:10px;padding-top:22px;border-top:1px solid var(--edge)}
 .legend{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:center;font-size:13px;color:var(--lilac);margin-top:4px}
 .legend span{display:inline-flex;align-items:center;gap:6px}
 .legend i{width:10px;height:10px;border-radius:50%;display:inline-block}
@@ -152,14 +154,14 @@ footer a{color:#fff;text-underline-offset:4px}
     </a>
     <div class="right">
       <span class="hide">Lagos, Nigeria</span>
-      <span><b id="appCount">8</b> apps</span>
+      <span><b id="appCount">15</b> apps</span>
     </div>
   </div>
 
   <div class="home">
     <div class="intro">
       <h1>Seun builds on the internet.</h1>
-      <p>This is my home screen. Every product and game I've put online lives here. Tap an app to see what it does and open it.</p>
+      <p>This is my home screen. Every product, game and website I've put online lives here. Tap an app to see what it does and open it.</p>
       <div class="widgets">
         <div class="widget">
           <small>Lagos time</small>
@@ -211,7 +213,7 @@ const apps = [
   {name:"Eppcheck", tag:"Physical verification", stage:"live", url:"https://www.eppcheck.com", bg:"#284E24",
    desc:"Book someone nearby to physically check an address, property or item for you. You get photos and a GPS-stamped report.",
    svg:`<circle cx="32" cy="32" r="22" fill="none" stroke="#fff" stroke-width="7"/><path d="M20 33l8 8 17-18" fill="none" stroke="#C0D346" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>`},
-  {name:"TrailConstruct", tag:"Construction tracking", stage:"pilot", url:"https://trailconstruct.com", bg:"#16224A",
+  {name:"TrailConstruct", tag:"Construction tracking", stage:"live", url:"https://trailconstruct.com", bg:"#16224A",
    desc:"Track a building project stage by stage. Engineers send updates, developers approve them and investors get clean reports.",
    svg:`<path d="M8 50 C22 46 20 30 32 28 S44 14 56 12" fill="none" stroke="#F2A93B" stroke-width="5" stroke-linecap="round" stroke-dasharray="1 9"/><circle cx="8" cy="50" r="5" fill="#fff"/><circle cx="32" cy="28" r="5" fill="#fff"/><circle cx="56" cy="12" r="5" fill="#F2A93B"/>`},
   {name:"Game Night", tag:"Party games on your phone", stage:"live", url:"https://gamenight.mskbuilds.app", bg:"#FF5FA2",
@@ -228,7 +230,31 @@ const apps = [
    svg:`<circle cx="32" cy="32" r="18" fill="#C9D2FF"/><circle cx="32" cy="32" r="9" fill="#3B5BDB"/><circle cx="36" cy="28" r="3" fill="#fff"/><circle cx="32" cy="32" r="25" fill="none" stroke="#FF5FA2" stroke-width="2.5" stroke-dasharray="4 6"/>`},
   {name:"carshare.africa", tag:"Fuel-sharing commutes", stage:"paused", url:"https://carshare.africa", bg:"#00A3A3",
    desc:"Share a ride and split the fuel with people going your way in Lagos.",
-   svg:`<path d="M10 40v-8l6-12h32l6 12v8z" fill="#fff"/><path d="M20 23h24l4 9H16z" fill="#00A3A3"/><circle cx="20" cy="42" r="6" fill="#1F240C"/><circle cx="44" cy="42" r="6" fill="#1F240C"/>`}
+   svg:`<path d="M10 40v-8l6-12h32l6 12v8z" fill="#fff"/><path d="M20 23h24l4 9H16z" fill="#00A3A3"/><circle cx="20" cy="42" r="6" fill="#1F240C"/><circle cx="44" cy="42" r="6" fill="#1F240C"/>`},
+  {name:"Seun Mosaku", group:"site", tag:"My personal site", stage:"live", url:"https://seunmosaku.com", bg:"#C0D346",
+   desc:"Who I am: my real estate work, Eppcheck and the creative things I make.",
+   svg:`<text x="32" y="42" text-anchor="middle" font-family="Unbounded,system-ui,sans-serif" font-weight="800" font-size="26" fill="#284E24">SM</text>`},
+  {name:"Chef Yos", group:"site", tag:"Private chef, Lagos", stage:"live", url:"https://chefyos.pages.dev", bg:"#E0603A",
+   desc:"A Lagos private chef's site. Book weekly cooking on a monthly plan or a one-off dinner, straight through WhatsApp.",
+   svg:`<path d="M18 36c-7 0-10-9-4-13 1-8 11-10 15-5 3-6 13-6 16 1 7-1 10 9 3 13z" fill="#fff"/><rect x="20" y="36" width="24" height="12" rx="2" fill="#fff"/><path d="M20 42h24" stroke="#E0603A" stroke-width="2.5"/>`},
+  {name:"Yadah-G", group:"site", tag:"Insurance brokers", stage:"live", url:"https://yadahg.pages.dev", bg:"#0B3D91",
+   desc:"An insurance brokerage site where people request quotes, report claims and set renewal reminders.",
+   svg:`<path d="M32 9l19 7v14c0 12-8 20-19 25-11-5-19-13-19-25V16z" fill="#fff"/><path d="M23 32l6 6 12-13" fill="none" stroke="#0B3D91" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>`},
+  {name:"Trinity Towers", group:"site", tag:"Offices and events, Oniru", stage:"live", url:"https://trinitytowers.pages.dev", bg:"#2B3440",
+   desc:"Leasing site for the three-tower development in Oniru: offices, event halls, restaurants and leisure space.",
+   svg:`<rect x="12" y="20" width="11" height="34" rx="2" fill="#C9D6E3"/><rect x="26" y="10" width="12" height="44" rx="2" fill="#fff"/><rect x="41" y="16" width="11" height="38" rx="2" fill="#C9D6E3"/><path d="M29 18h6M29 26h6M29 34h6M29 42h6" stroke="#2B3440" stroke-width="2.5"/>`},
+  {name:"Osadebey", group:"site", tag:"Music producer", stage:"live", url:"https://osadebey.pages.dev", bg:"#6B2FD6",
+   desc:"Portfolio and booking site for a Lagos producer and mix engineer. Artists request studio sessions here.",
+   svg:`<g stroke="#fff" stroke-width="5" stroke-linecap="round"><path d="M12 28v8M21 20v24M30 12v40M39 22v20M48 16v32M56 28v8"/></g>`},
+  {name:"Uriel", group:"site", tag:"Property, construction, energy", stage:"live", url:"https://urielngr.pages.dev", bg:"#9A6B1F",
+   desc:"Home page for the Uriel group: companies working in property, construction, energy, farming and investment.",
+   svg:`<circle cx="44" cy="20" r="7" fill="#FFD36B"/><path d="M10 34L28 18l18 16" fill="none" stroke="#fff" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/><rect x="16" y="33" width="24" height="19" fill="#fff"/><rect x="25" y="40" width="7" height="12" fill="#9A6B1F"/>`},
+  {name:"Uriel Precinct", group:"site", tag:"Uriel development", stage:"building", url:"", bg:"#3E5641",
+   desc:"A site for Uriel's precinct development.",
+   svg:`<rect x="10" y="30" width="14" height="24" fill="#E7EDD9"/><rect x="26" y="18" width="14" height="36" fill="#fff"/><rect x="42" y="26" width="12" height="28" fill="#E7EDD9"/><path d="M8 54h48" stroke="#fff" stroke-width="3"/>`},
+  {name:"Tosin Ayodele", group:"site", tag:"Facilities management expert", stage:"live", url:"https://ayodeletosin.com", bg:"#2E7D6B",
+   desc:"Personal site for a facilities and building management professional working on greener, cheaper-to-run buildings.",
+   svg:`<rect x="14" y="22" width="22" height="32" fill="#fff"/><path d="M19 29h4M27 29h4M19 37h4M27 37h4M19 45h4M27 45h4" stroke="#2E7D6B" stroke-width="3"/><path d="M40 54c0-14 6-22 16-24-1 12-6 20-16 24z" fill="#B7E36B"/>`}
 ];
 
 const stages = {
@@ -241,11 +267,13 @@ const esc = s => String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&
 const iconHTML = a => `<svg viewBox="0 0 64 64" aria-hidden="true">${a.svg}</svg>`;
 
 const grid = document.getElementById("apps");
-grid.innerHTML = apps.map((a,i)=>`
+const tile=(a,i)=>`
   <button class="app" role="listitem" style="--i:${i}" data-i="${i}" aria-label="${esc(a.name)}, ${stages[a.stage].label}">
     <span class="icon" style="background:${a.bg}">${iconHTML(a)}<span class="badge ${a.stage}"></span></span>
     <span>${esc(a.name)}</span>
-  </button>`).join("") +
+  </button>`;
+const groups=[["Products and games",a=>a.group!=="site"],["Websites I've built",a=>a.group==="site"]];
+grid.innerHTML = groups.map(([label,f])=>`<h2 class="grp">${label}</h2>`+apps.map((a,i)=>f(a)?tile(a,i):"").join("")).join("") +
   `<div class="legend">${Object.values(stages).map(s=>`<span><i style="background:${s.c}"></i>${s.label}</span>`).join("")}</div>`;
 
 document.getElementById("appCount").textContent = apps.length;
